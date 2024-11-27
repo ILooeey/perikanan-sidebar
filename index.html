@@ -3,237 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perikanan Web</title>
+    <title>Perikanan Indah</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <!-- Link untuk Bootstrap CSS untuk Carousel -->
+    <!-- Link untuk Bootstrap CSS untuk komponen jika diperlukan -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<style>
-        /* General Styles */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2980b9; /* Biru laut */
+    color: white;
+    padding: 20px;
+}
+
+header .logo h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin-right: 30px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #1abc9c; /* Hijau biru */
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('https://via.placeholder.com/1200x600?text=Background+Hero');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h2 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.cta-btn {
+    background-color: #16a085; /* Hijau perikanan */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #1abc9c;
+}
+
+/* Informasi Section */
+.info {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.info h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.info ul {
+    list-style: disc;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+/* Produk Section */
+.products {
+    padding: 40px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.products h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.product-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product-card {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.product-card h4 {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.product-card p {
+    font-size: 16px;
+    color: #777;
+}
+
+/* Footer */
+footer {
+    background-color: #2980b9;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
     }
-    
-    body {
-        font-family: 'Arial', sans-serif;
-        display: flex;
-        min-height: 100vh;
+
+    .product-list {
         flex-direction: column;
     }
-    
-    /* Sidebar Styles */
-    .sidebar {
-        width: 250px;
-        background-color: #2980b9; /* Warna biru laut */
-        color: white;
-        padding: 20px;
-        height: 100vh;
-        position: fixed;
-    }
-    
-    .sidebar h2 {
-        text-align: center;
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
-    
-    .sidebar ul {
-        list-style-type: none;
-    }
-    
-    .sidebar ul li {
-        margin: 15px 0;
-    }
-    
-    .sidebar ul li a {
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
-        display: block;
-        padding: 8px 0;
-        transition: padding-left 0.3s ease-in-out;
-    }
-    
-    .sidebar ul li a:hover {
-        background-color: #1abc9c; /* Warna hijau biru untuk hover */
-        padding-left: 10px;
-    }
-    
-    /* Content Styles */
-    .content {
-        margin-left: 250px;
-        padding: 20px;
-        width: 100%;
-        flex-grow: 1;
-    }
-    
-    header {
-        background-color: #16a085; /* Warna hijau perikanan */
-        color: white;
-        padding: 15px;
-        text-align: center;
-    }
-    
-    main {
-        margin-top: 20px;
-    }
-    
-    section {
-        margin-bottom: 30px;
-    }
-    
-    h2 {
-        margin-bottom: 10px;
-        font-size: 24px;
-    }
-    
-    p {
-        font-size: 16px;
-    }
-    
-    /* Carousel Styles */
-    #carousel {
-        margin-bottom: 30px;
-    }
-    
-    .carousel-inner img {
-        border-radius: 8px;
-    }
-    
-    /* Background Image for Content */
-    .content {
-        background-image: url('https://www.example.com/fish-background.jpg'); /* Gambar background tema perikanan */
-        background-size: cover;
-        background-position: center;
-        color: white;
-    }
-    
-    /* Informasi Terkini */
-    ul {
-        list-style-type: disc;
-        margin-left: 20px;
-    }
-    
-    ul li {
-        font-size: 16px;
-        line-height: 1.6;
-    }
-    
-    /* Footer Styles */
-    footer {
-        background-color: #2980b9;
-        color: white;
-        text-align: center;
-        padding: 10px;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-    }
-    
-    /* Responsiveness */
-    @media (max-width: 768px) {
-        .sidebar {
-            width: 200px;
-        }
-    
-        .content {
-            margin-left: 200px;
-        }
-    
-        header h1 {
-            font-size: 20px;
-        }
-    }
-</style>
+}
 
-</body>
-    <div class="sidebar">
-        <h2>Perikanan Indah</h2>
-        <ul>
-            <li><a href="#">Beranda</a></li>
-            <li><a href="#">Produk Ikan</a></li>
-            <li><a href="#">Jenis Ikan</a></li>
-            <li><a href="#">Pengiriman</a></li>
-            <li><a href="#">Tentang Kami</a></li>
-        </ul>
-    </div>
+    </style>
 
-    <div class="content">
-        <header>
-            <h1>Selamat Datang di Perikanan Indah</h1>
-        </header>
-        <main>
-            <!-- Carousel -->
-            <section id="carousel">
-                <div id="fishCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="https://via.placeholder.com/800x300?text=Ikan+Segar" class="d-block w-100" alt="Ikan Segar 1">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Ikan Segar Berkualitas</h5>
-                                <p>Menawarkan ikan segar dari sumber terpercaya.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://via.placeholder.com/800x300?text=Ikan+Laut" class="d-block w-100" alt="Ikan Laut">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Ikan Laut Pilihan</h5>
-                                <p>Menikmati ikan laut yang kaya rasa dan nutrisi.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://via.placeholder.com/800x300?text=Produk+Ikan+Kami" class="d-block w-100" alt="Produk Ikan Kami">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Produk Ikan Terbaik</h5>
-                                <p>Kami menyediakan produk ikan terbaik untuk Anda.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#fishCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#fishCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+    <header class="header">
+        <div class="logo">
+            <h1>Perikanan Indah</h1>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#">Produk Ikan</a></li>
+                <li><a href="#">Jenis Ikan</a></li>
+                <li><a href="#">Pengiriman</a></li>
+                <li><a href="#">Tentang Kami</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Selamat Datang di Perikanan Indah</h2>
+                <p>Menawarkan ikan segar berkualitas tinggi langsung dari laut ke meja Anda.</p>
+                <a href="#" class="cta-btn">Lihat Produk</a>
+            </div>
+        </section>
+
+        <!-- Informasi Terkini -->
+        <section class="info">
+            <h3>Informasi Terkini Mengenai Perikanan</h3>
+            <ul>
+                <li>Ekspor ikan laut Indonesia meningkat 12% pada tahun 2024.</li>
+                <li>Teknologi budidaya ikan semakin ramah lingkungan.</li>
+                <li>Perikanan berkelanjutan semakin mendapat perhatian global.</li>
+            </ul>
+        </section>
+
+        <!-- Produk -->
+        <section class="products">
+            <h3>Produk Ikan Kami</h3>
+            <div class="product-list">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200?text=Ikan+Segar" alt="Ikan Segar">
+                    <h4>Ikan Segar</h4>
+                    <p>Ikan berkualitas tinggi siap diolah.</p>
                 </div>
-            </section>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200?text=Ikan+Laut" alt="Ikan Laut">
+                    <h4>Ikan Laut</h4>
+                    <p>Dapatkan ikan laut pilihan terbaik.</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-            <!-- Informasi Terkini -->
-            <section>
-                <h2>Informasi Terkini Mengenai Perikanan</h2>
-                <ul>
-                    <li>Perikanan di Indonesia mengalami peningkatan yang pesat pada tahun 2024, dengan ekspor ikan laut meningkat sebesar 12%.</li>
-                    <li>Produksi ikan segar di daerah pesisir terus meningkat seiring dengan kemajuan teknologi budidaya ikan yang lebih ramah lingkungan.</li>
-                    <li>Program keberlanjutan dalam industri perikanan mendukung pelestarian ekosistem laut dan perikanan berkelanjutan.</li>
-                </ul>
-            </section>
+    <footer>
+        <p>&copy; 2024 Perikanan Indah. All rights reserved.</p>
+    </footer>
 
-            <section>
-                <h2>Produk Ikan Kami</h2>
-                <p>Kami menyediakan berbagai jenis ikan segar dan berkualitas tinggi.</p>
-            </section>
-            <section>
-                <h2>Jenis Ikan yang Tersedia</h2>
-                <p>Berbagai ikan air tawar dan laut, seperti ikan salmon, tuna, gurame, dan lele.</p>
-            </section>
-            <section>
-                <h2>Layanan Pengiriman Ikan</h2>
-                <p>Kami menawarkan pengiriman ikan segar ke seluruh wilayah dengan layanan yang cepat dan aman.</p>
-            </section>
-        </main>
-
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2024 Perikanan Indah. All rights reserved.</p>
-        </footer>
-    </div>
-
-    <!-- Link untuk Bootstrap JS (diperlukan untuk Carousel) -->
+    <!-- Bootstrap JS (optional, only if you use Bootstrap components like modal, etc.) -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 </body>
